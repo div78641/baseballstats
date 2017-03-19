@@ -4,7 +4,7 @@
 
 <xsl:template match="/">
 	<xsl:text>8431d600-a52e-43de-967e-0bb687ec0142	
-Jersey|AtBats|Runs|Hits|RunsBattedIn|Singles|Doubles|Triples|HomeRuns|SacrificeFly|SacrificeBunt|BaseOnBalls|StruckOut|HitByPitch|ReachedOnError|FieldersChoice|StolenBase|StolenBaseAttempts|LeftOnBase|PutOuts|Assists|Errors|DoublePlays|StolenBaseAttemptsCatcher|CaughtStealing|PassedBalls|Start|Win|Loss|Save|Appearances|CompleteGame|ShutOut|InningsPitched|PartialInningPitched|BattersFaced|RunsAgainst|EarnedRuns|HitsAgainst|DoublesAgainst|TriplesAgainst|HomeRunsAgainst|SacrificeFlyPitcher|SacrificeBuntPitcher|BaseOnBallsAgainst|BattersStruckOut|HitBatter|Balks|WildPitches|NumberOfPitches|PickOffs|StolenBasesPitcher
+Jersey|AtBats|Runs|Hits|RunsBattedIn|Singles|Doubles|Triples|HomeRuns|SacrificeFly|SacrificeBunt|BaseOnBalls|StruckOut|HitByPitch|ReachedOnError|FieldersChoice|StolenBase|StolenBaseAttempts|LeftOnBase|PutOuts|Assists|Errors|DoublePlays|StolenBaseAttemptsCatcher|CaughtStealing|PassedBalls|Start|Win|Loss|Save|Appearances|CompleteGame|NoHitter|PerfectGame|ShutOut|InningsPitched|PartialInningPitched|BattersFaced|RunsAgainst|EarnedRuns|HitsAgainst|DoublesAgainst|TriplesAgainst|HomeRunsAgainst|SacrificeFlyPitcher|SacrificeBuntPitcher|BaseOnBallsAgainst|BattersStruckOut|HitBatter|Balks|WildPitches|NumberOfPitches|PickOffs|StolenBasesPitcher
 </xsl:text>
 <xsl:text>--visiting team--
 </xsl:text>
@@ -428,6 +428,10 @@ Jersey|AtBats|Runs|Hits|RunsBattedIn|Singles|Doubles|Triples|HomeRuns|SacrificeF
 					<xsl:text>0</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
+			<!-- NoHitter -->
+			<xsl:text>|0</xsl:text>
+			<!-- PerfectGame -->
+			<xsl:text>|0</xsl:text>
 			<xsl:text>|</xsl:text>
 			<xsl:value-of select="substring-before($player/@IP,'.')"/>
 			<xsl:text>|</xsl:text>
@@ -577,7 +581,7 @@ Jersey|AtBats|Runs|Hits|RunsBattedIn|Singles|Doubles|Triples|HomeRuns|SacrificeF
 			</xsl:choose>
 		</xsl:when>
 		<xsl:otherwise>
-			<xsl:text>||||||||||||||||||||||||||</xsl:text>
+			<xsl:text>||||||||||||||||||||||||||||</xsl:text>
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
