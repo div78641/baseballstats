@@ -4,7 +4,7 @@
 
 <xsl:template match="/">
 	<xsl:text>8431d600-a52e-43de-967e-0bb687ec0142	
-Jersey|AtBats|Runs|Hits|RunsBattedIn|Singles|Doubles|Triples|HomeRuns|SacrificeFly|SacrificeBunt|BaseOnBalls|StruckOut|HitByPitch|ReachedOnError|FieldersChoice|StolenBase|StolenBaseAttempts|LeftOnBase|PutOuts|Assists|Errors|DoublePlays|StolenBaseAttemptsCatcher|CaughtStealing|PassedBalls|Start|Win|Loss|Save|Appearances|CompleteGame|NoHitter|PerfectGame|ShutOut|InningsPitched|PartialInningPitched|BattersFaced|RunsAgainst|EarnedRuns|HitsAgainst|DoublesAgainst|TriplesAgainst|HomeRunsAgainst|SacrificeFlyPitcher|SacrificeBuntPitcher|BaseOnBallsAgainst|BattersStruckOut|HitBatter|Balks|WildPitches|NumberOfPitches|PickOffs|StolenBasesPitcher
+Jersey|AtBats|Runs|Hits|RunsBattedIn|Singles|Doubles|Triples|HomeRuns|SacrificeFly|SacrificeBunt|BaseOnBalls|StruckOut|HitByPitch|ReachedOnError|FieldersChoice|StolenBase|StolenBaseAttempts|LeftOnBase|GrandSlams|PutOuts|Assists|Errors|DoublePlays|StolenBaseAttemptsCatcher|CaughtStealing|PassedBalls|Start|Win|Loss|Save|Appearances|CompleteGame|NoHitter|PerfectGame|ShutOut|InningsPitched|PartialInningPitched|BattersFaced|RunsAgainst|EarnedRuns|HitsAgainst|DoublesAgainst|TriplesAgainst|HomeRunsAgainst|SacrificeFlyPitcher|SacrificeBuntPitcher|BaseOnBallsAgainst|BattersStruckOut|HitBatter|Balks|WildPitches|NumberOfPitches|PickOffs|StolenBasesPitcher
 </xsl:text>
 <xsl:text>--visiting team--
 </xsl:text>
@@ -247,9 +247,20 @@ Jersey|AtBats|Runs|Hits|RunsBattedIn|Singles|Doubles|Triples|HomeRuns|SacrificeF
 					<xsl:text>0</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
+			<xsl:text>|</xsl:text>
+			<xsl:choose>
+				<xsl:when test="$player/@HR and $player/@RBI &gt; 4">
+					<xsl:comment>
+						need to find value of this. 
+					</xsl:comment>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>0</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:when>
 		<xsl:otherwise>
-			<xsl:text>||||||||||||||||||</xsl:text>
+			<xsl:text>|||||||||||||||||||</xsl:text>
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
